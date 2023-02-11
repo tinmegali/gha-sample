@@ -16,6 +16,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: Hello Merged Code
         run: |
-          echo 'Comment on PR $PR_NUMBER.'
-          echo $COMMENT
+          echo "Comment on PR $PR_NUMBER."
+          echo "$COMMENT"
       

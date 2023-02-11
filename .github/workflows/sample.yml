@@ -1,0 +1,13 @@
+on:
+  pull_request:
+    branches:
+    - main
+    
+jobs:
+  hello_job:
+    name: Hello World Job!
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Say hello
+      run: echo 'Hello World!'

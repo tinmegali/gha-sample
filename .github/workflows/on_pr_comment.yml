@@ -10,12 +10,12 @@ jobs:
     name: On PR Comment
     runs-on: ubuntu-latest
     env:
-        PR_NUMBER: ${{ github.event.number }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
         COMMENT: ${{ github.issue_comment }}
     steps:
       - uses: actions/checkout@v1
       - name: Hello Merged Code
         run: |
           echo "Comment on PR $PR_NUMBER."
-          echo "$COMMENT"
+          echo ${{ github.event.pull_request.number }}
       

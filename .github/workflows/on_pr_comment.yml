@@ -1,0 +1,21 @@
+on:
+  issue_comment:
+    types:
+      - created
+      - deleted
+      - edited
+    
+jobs:
+  on_comment:
+    name: On PR Comment
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          COMMENT: ${{ github.event.issue_comment }}
+      - uses: actions/checkout@v1
+      - name: Hello Merged Code
+        run: |
+          echo 'Comment on PR $PR_NUMBER.'
+          echo $COMMENT
+      

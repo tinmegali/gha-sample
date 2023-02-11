@@ -12,10 +12,11 @@ jobs:
     env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
         COMMENT: ${{ github.issue_comment }}
+        SAMPLE: "sample"
     steps:
-      - uses: actions/checkout@v1
       - name: Hello Merged Code
         run: |
           echo "Comment on PR $PR_NUMBER."
           echo ${{ github.event.pull_request.number }}
+          echo $SAMPLE
       

@@ -10,7 +10,7 @@ jobs:
     name: On PR Comment
     runs-on: ubuntu-latest
     env:
-        PR_NUMBER: ${{ github.event.pull_request.number }}
+        PR_NUMBER: ${{ github.event.issue.pull_request.number }}
         COMMENT: ${{ github.issue_comment }}
         SAMPLE: "sample"
     steps:

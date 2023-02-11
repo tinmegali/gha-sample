@@ -9,10 +9,10 @@ jobs:
   on_comment:
     name: On PR Comment
     runs-on: ubuntu-latest
-    steps:
-      env:
+    env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
         COMMENT: ${{ github.event.issue_comment }}
+    steps:
       - uses: actions/checkout@v1
       - name: Hello Merged Code
         run: |
